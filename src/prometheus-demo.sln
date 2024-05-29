@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{5E52ACDF-82D6-4D97-967B-F43545967D68}"
+	ProjectSection(SolutionItems) = preProject
+		prometheus.yml = prometheus.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "grafana", "grafana", "{91186E88-272C-4550-BE3E-3E51E2B9E1BE}"
+	ProjectSection(SolutionItems) = preProject
+		grafana\Dockerfile = grafana\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "provisioning", "provisioning", "{3B1E0115-B163-4FC2-8409-A84F30E71316}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasources", "datasources", "{EE4E7538-02AC-4351-B9C0-773FF0B667D8}"
+	ProjectSection(SolutionItems) = preProject
+		grafana\provisioning\datasources\all.yml = grafana\provisioning\datasources\all.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{EEAFCD12-5924-454B-B46F-FC61C273F1B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dashboards", "dashboards", "{2EF0EA5B-6909-41C4-B06D-0BE384D3FC1C}"
+	ProjectSection(SolutionItems) = preProject
+		grafana\provisioning\dashboards\all.yaml = grafana\provisioning\dashboards\all.yaml
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{42EE0467-9DDE-4A81-A635-380A14DA74D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEAFCD12-5924-454B-B46F-FC61C273F1B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAFCD12-5924-454B-B46F-FC61C273F1B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAFCD12-5924-454B-B46F-FC61C273F1B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAFCD12-5924-454B-B46F-FC61C273F1B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42EE0467-9DDE-4A81-A635-380A14DA74D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42EE0467-9DDE-4A81-A635-380A14DA74D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42EE0467-9DDE-4A81-A635-380A14DA74D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42EE0467-9DDE-4A81-A635-380A14DA74D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91186E88-272C-4550-BE3E-3E51E2B9E1BE} = {5E52ACDF-82D6-4D97-967B-F43545967D68}
+		{3B1E0115-B163-4FC2-8409-A84F30E71316} = {91186E88-272C-4550-BE3E-3E51E2B9E1BE}
+		{EE4E7538-02AC-4351-B9C0-773FF0B667D8} = {3B1E0115-B163-4FC2-8409-A84F30E71316}
+		{2EF0EA5B-6909-41C4-B06D-0BE384D3FC1C} = {3B1E0115-B163-4FC2-8409-A84F30E71316}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBB1B691-E034-43AD-936E-DC92BD7CCA6E}
+	EndGlobalSection
+EndGlobal
