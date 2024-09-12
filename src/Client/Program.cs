@@ -5,7 +5,7 @@
 
 Console.WriteLine($"started at {DateTime.Now}");
 
-var iterationCount = 1800;
+var iterationCount = 450;
 var tasks = new[]
                 {
                     Task.Run(
@@ -20,7 +20,7 @@ var tasks = new[]
                     Task.Run(
                         () =>
                             {
-                                for (var i = 0; i < iterationCount / 10; i++)
+                                for (var i = 0; i < iterationCount; i++)
                                 {
                                     var workers = new Task[10];
                                     for (var j = 0; j < 10; j++)
@@ -29,7 +29,7 @@ var tasks = new[]
                                             async () =>
                                                 {
                                                     await httpClient.GetAsync("demo/OperationsInProgress");
-                                                    Thread.Sleep(250);
+                                                    Thread.Sleep(Random.Shared.Next(250, 500));
                                                 });
                                     }
 
