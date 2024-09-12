@@ -25,6 +25,7 @@
   "panels": [
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
         "uid": "P1809F7CD0C75ACF3"
       },
@@ -41,6 +42,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -152,8 +154,10 @@
             "type": "prometheus",
             "uid": "P1809F7CD0C75ACF3"
           },
-          "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller =~ \"$controllers\"}[3m])) by (controller)",
+          "editorMode": "code",
+          "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller =~ \"$controllers\"}[$interval])) by (controller)",
           "legendFormat": "{{controller}}",
+          "range": true,
           "refId": "A"
         },
         {
@@ -171,6 +175,7 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
         "uid": "P1809F7CD0C75ACF3"
       },
@@ -222,6 +227,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -233,14 +239,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.0.0",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "P1809F7CD0C75ACF3"
           },
-          "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller =~ \"$controllers\"}[3m]))",
+          "editorMode": "code",
+          "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller =~ \"$controllers\"}[$interval]))",
           "instant": false,
           "refId": "A"
         }
@@ -301,6 +308,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -312,7 +320,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.0.0",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
@@ -338,6 +346,7 @@
       },
       "dataFormat": "tsbuckets",
       "datasource": {
+        "default": true,
         "type": "prometheus",
         "uid": "P1809F7CD0C75ACF3"
       },
@@ -410,7 +419,7 @@
           "unit": "s"
         }
       },
-      "pluginVersion": "11.0.0",
+      "pluginVersion": "11.2.0",
       "reverseYBuckets": false,
       "targets": [
         {
@@ -418,7 +427,8 @@
             "type": "prometheus",
             "uid": "P1809F7CD0C75ACF3"
           },
-          "expr": "sum(increase(http_request_duration_seconds_bucket{instance =~ \"$instances\", controller =~ \"$controllers\"}[$__interval])) by (le)",
+          "editorMode": "code",
+          "expr": "sum(increase(http_request_duration_seconds_bucket{instance =~ \"$instances\", controller =~ \"$controllers\"}[$interval])) by (le)",
           "format": "heatmap",
           "instant": false,
           "interval": "5m",
@@ -446,6 +456,7 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
         "uid": "P1809F7CD0C75ACF3"
       },
@@ -462,6 +473,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -573,8 +585,10 @@
             "type": "prometheus",
             "uid": "P1809F7CD0C75ACF3"
           },
-          "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller =~ \"$controllers\", code =~ \"5\\\\d\\\\d|4\\\\d\\\\d\"}[3m])) by (controller)",
+          "editorMode": "code",
+          "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller =~ \"$controllers\", code =~ \"5\\\\d\\\\d|4\\\\d\\\\d\"}[$interval])) by (controller)",
           "legendFormat": "{{controller}}",
+          "range": true,
           "refId": "A"
         },
         {
@@ -649,6 +663,76 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "auto": false,
+        "auto_count": 30,
+        "auto_min": "10s",
+        "current": {
+          "selected": false,
+          "text": "1m",
+          "value": "1m"
+        },
+        "hide": 0,
+        "label": "interval",
+        "name": "interval",
+        "options": [
+          {
+            "selected": true,
+            "text": "1m",
+            "value": "1m"
+          },
+          {
+            "selected": false,
+            "text": "10m",
+            "value": "10m"
+          },
+          {
+            "selected": false,
+            "text": "30m",
+            "value": "30m"
+          },
+          {
+            "selected": false,
+            "text": "1h",
+            "value": "1h"
+          },
+          {
+            "selected": false,
+            "text": "6h",
+            "value": "6h"
+          },
+          {
+            "selected": false,
+            "text": "12h",
+            "value": "12h"
+          },
+          {
+            "selected": false,
+            "text": "1d",
+            "value": "1d"
+          },
+          {
+            "selected": false,
+            "text": "7d",
+            "value": "7d"
+          },
+          {
+            "selected": false,
+            "text": "14d",
+            "value": "14d"
+          },
+          {
+            "selected": false,
+            "text": "30d",
+            "value": "30d"
+          }
+        ],
+        "query": "1m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
+        "queryValue": "",
+        "refresh": 2,
+        "skipUrlSync": false,
+        "type": "interval"
       }
     ]
   },
@@ -656,7 +740,6 @@
     "from": "now-3h",
     "to": "now"
   },
-  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {
     "refresh_intervals": [
       "5s",
@@ -674,6 +757,6 @@
   "timezone": "",
   "title": "ASP.NET Core - controller summary (Prometheus)",
   "uid": "h1FE3PpWk",
-  "version": 3,
+  "version": 8,
   "weekStart": ""
 }

@@ -21,6 +21,8 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Metrics.SuppressDefaultMetrics();
 app.MapMetrics();
 app.UseHttpMetrics();
 

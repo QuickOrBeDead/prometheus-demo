@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "datasources", "datasources"
 		grafana\provisioning\datasources\all.yml = grafana\provisioning\datasources\all.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{EEAFCD12-5924-454B-B46F-FC61C273F1B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{EEAFCD12-5924-454B-B46F-FC61C273F1B0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dashboards", "dashboards", "{2EF0EA5B-6909-41C4-B06D-0BE384D3FC1C}"
 	ProjectSection(SolutionItems) = preProject
@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dashboards", "dashboards", 
 	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{42EE0467-9DDE-4A81-A635-380A14DA74D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{F62F76E1-8DFA-4C3E-9F12-9674C3ADD4A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{42EE0467-9DDE-4A81-A635-380A14DA74D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42EE0467-9DDE-4A81-A635-380A14DA74D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42EE0467-9DDE-4A81-A635-380A14DA74D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62F76E1-8DFA-4C3E-9F12-9674C3ADD4A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62F76E1-8DFA-4C3E-9F12-9674C3ADD4A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62F76E1-8DFA-4C3E-9F12-9674C3ADD4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62F76E1-8DFA-4C3E-9F12-9674C3ADD4A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
