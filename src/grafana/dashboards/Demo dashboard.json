@@ -78,7 +78,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -158,7 +158,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "reqps"
         },
         "overrides": []
       },
@@ -177,7 +178,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -188,7 +189,7 @@
             "uid": "P1809F7CD0C75ACF3"
           },
           "editorMode": "code",
-          "expr": "sum(rate(operations_failed_invalid_operation_exception_total[$__rate_interval]))",
+          "expr": "rate(operations_failed_invalid_operation_exception_total[$__rate_interval])",
           "instant": false,
           "legendFormat": "Exception Count",
           "range": true,
@@ -255,7 +256,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "reqps"
         },
         "overrides": []
       },
@@ -274,7 +276,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
@@ -304,13 +306,13 @@
     "list": []
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Demo dashboard",
   "uid": "cdxo94d8brrpcc",
-  "version": 15,
+  "version": 19,
   "weekStart": ""
 }

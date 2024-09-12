@@ -44,6 +44,15 @@ var tasks = new[]
                                     await httpClient.GetAsync("demo/OperationException");
                                     Thread.Sleep(500);
                                 }
+                            }),
+                    Task.Run(
+                        async () =>
+                            {
+                                for (var i = 0; i < iterationCount; i++)
+                                {
+                                    await httpClient.GetAsync("Second/Test");
+                                    Thread.Sleep(250);
+                                }
                             })
                 };
 
